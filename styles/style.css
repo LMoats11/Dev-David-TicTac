@@ -10,7 +10,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.game-board {
+#game-board {
     display: flex;
     flex-wrap: wrap;
     background-color: #f44f4f; 
