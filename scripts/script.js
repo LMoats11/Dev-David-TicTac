@@ -33,3 +33,16 @@ function resetGame() {
 cells.forEach(cell => cell.addEventListener('click', handleClick));
 resetButton.addEventListener('click', resetGame);
 
+$(document).ready(function(){
+  
+  $('#reset').on('click', function(){
+    //move my board back to the start 
+    $("#gameboard").css( 'top', '0px').css('left', '0px');
+    //https://jqueryui.com/position/
+  })
+  
+  $("gameboard").draggable( {
+      stop: function() { 
+        
+        if ( $("gameboard").position().left > 100)
+      }
