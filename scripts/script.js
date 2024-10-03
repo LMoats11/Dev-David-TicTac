@@ -6,58 +6,36 @@ $(document).ready(function() {
     function checkWin() {
         const winPatterns = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8],
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], 
-            [0, 4, 8], [2, 4, 6]             
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
         ];
-        
 
         for (let pattern of winPatterns) {
             const [a, b, c] = pattern;
             if (cells.eq(a).text() && cells.eq(a).text() === cells.eq(b).text() && cells.eq(a).text() === cells.eq(c).text()) {
                 alert(currentPlayer + " wins!");
                 resetGame();
-                return; 
+                return;
             }
         }
     }
 
     function handleClick() {
-        if (!$(this).text()) { 
+        if (!$(this).text()) {
             $(this).text(currentPlayer);
             checkWin();
-            currentPlayer = currentPlayer === "X" ? "O" : "X"; 
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
         }
     }
 
     function resetGame() {
-        cells.text(""); 
-        currentPlayer = "X"; 
+        cells.text("");
+        currentPlayer = "X";
     }
 
-    
-    cells.draggable({
-        revert: "invalid",
-        start: function() {
-            $(this).addClass('dragging'); 
-        },
-        stop: function() {
-            $(this).removeClass('dragging'); 
-        }
-    });
-
-    
-    cells.droppable({
-        accept: ".cell",
-        drop: function(event, ui) {
-            if (!$(this).text()) { 
-                $(this).text(ui.draggable.text()); 
-                checkWin();
-                currentPlayer = currentPlayer === "X" ? "O" : "X"; 
-            }
-        }
-    });
-
-    
     cells.on('click', handleClick);
+    resetButton.on('click', resetGame);
+});
+
     resetButton.on('click', resetGame); 
 });
