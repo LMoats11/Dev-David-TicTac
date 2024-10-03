@@ -7,10 +7,9 @@ body {
 
 .navbar {
     background-color: #fff; 
-    background-repeat: no-repeat;
 }
 
-#game-board {
+#gameboard {
     display: flex;
     flex-wrap: wrap;
     background-color: #f44f4f; 
