@@ -3,8 +3,8 @@ $(document).ready(function() {
     const cells = document.querySelectorAll('.cell');
     const resetButton = document.getElementById('resetBtn');
 
-    // Draggable gameboard
-    $("#gameboard").draggable();
+    // Draggable game title
+    $("#gameTitle").draggable();
 
     function checkWin() {
         const winPatterns = [
@@ -32,7 +32,6 @@ $(document).ready(function() {
     function resetGame() {
         cells.forEach(cell => cell.textContent = "");
         currentPlayer = "X";
-        $("#gameboard").css({ top: 0, left: 0 }); // Reset the gameboard position
     }
 
     cells.forEach(cell => cell.addEventListener('click', handleClick));
