@@ -5,53 +5,59 @@ $(document).ready(function() {
 
     function checkWin() {
         const winPatterns = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-            [0, 4, 8], [2, 4, 6]             // diagonals
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+            [0, 4, 8], [2, 4, 6]             
         ];
-        winPatterns.forEach(pattern => {
+        
+
+        for (let pattern of winPatterns) {
             const [a, b, c] = pattern;
             if (cells.eq(a).text() && cells.eq(a).text() === cells.eq(b).text() && cells.eq(a).text() === cells.eq(c).text()) {
                 alert(currentPlayer + " wins!");
                 resetGame();
+                return; 
             }
-        });
+        }
     }
 
     function handleClick() {
-        if (!$(this).text()) {
+        if (!$(this).text()) { 
             $(this).text(currentPlayer);
             checkWin();
-            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            currentPlayer = currentPlayer === "X" ? "O" : "X"; 
         }
     }
 
     function resetGame() {
-        cells.text(""); // Clear all cell texts
-        currentPlayer = "X"; // Reset current player to X
+        cells.text(""); 
+        currentPlayer = "X"; 
     }
 
-    // Initialize draggable and droppable functionality
+    
     cells.draggable({
-        revert: "invalid", // If not dropped in a valid location, it reverts
+        revert: "invalid",
         start: function() {
-            $(this).addClass('dragging'); // Optional: Add a class when dragging
+            $(this).addClass('dragging'); 
         },
         stop: function() {
-            $(this).removeClass('dragging'); // Remove the class when done
+            $(this).removeClass('dragging'); 
         }
-    }).droppable({
+    });
+
+    
+    cells.droppable({
         accept: ".cell",
         drop: function(event, ui) {
-            if (!$(this).text()) {
-                $(this).text(ui.draggable.text()); // Set the dropped element's text
-                ui.draggable.position({ of: $(this), my: "left top", at: "left top" }); // Snap to position
-                checkWin(); // Check for a win after placing
-                currentPlayer = currentPlayer === "X" ? "O" : "X"; // Switch player
+            if (!$(this).text()) { 
+                $(this).text(ui.draggable.text()); 
+                checkWin();
+                currentPlayer = currentPlayer === "X" ? "O" : "X"; 
             }
         }
     });
 
+    
     cells.on('click', handleClick);
-    resetButton.on('click', resetGame);
+    resetButton.on('click', resetGame); 
 });
