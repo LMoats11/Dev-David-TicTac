@@ -8,16 +8,15 @@ I am interested in finding new places, meeting new people, and seeing new things
 
 ### Skills and Technologies
 - **Frontend Development**: HTML5, CSS3, JavaScript, Bootstrap, jQuery
-- **Database Technologies**: MongoDB, SQL,
-- **Dev Tools**: Git, GitHub, 
+- **Database Technologies**: MongoDB, SQL
+- **Dev Tools**: Git, GitHub
 
 ### Contact Me
 Feel free to connect with me on:
 - [GitHub](https://github.com/LMoats11)
 
 
-
-![Profile Badge](https://img.shields.io/github/followers/barrycumbie?label=Follow%20Me&style=social)  
+![Profile Badge](https://img.shields.io/github/followers/LMoats11?label=Follow%20Me&style=social)  
 
 
 
@@ -29,6 +28,6 @@ Feel free to connect with me on:
 
 
 ### 📊 GitHub Stats
-![Barry's GitHub Stats](https://github-readme-stats.vercel.app/api?username=barrycumbie&show_icons=true&theme=radical)  
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=barrycumbie&theme=dark)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=barrycumbie&langs_count=8&theme=dark)
+![LMoats11's GitHub Stats](https://github-readme-stats.vercel.app/api?username=LMoats11&show_icons=true&theme=radical)  
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=LMoats11&theme=dark)  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=LMoats11&langs_count=8&theme=dark)
